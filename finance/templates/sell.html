@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stocks
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <select name="symbol" class="form-select form-select-lg pr-5 mb-3" aria-label=".form-select-lg example">
+            <option selected>Stock Symbol</option>
+
+                {% for row in stocks %}
+                    <option> {{ row["symbol"] }}</option>
+                {% endfor %}
+        </select>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="shares" placeholder="Shares" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+
+{% endblock %}

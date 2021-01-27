@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user["name"] }}</td>
+            <td>{{ user["symbol"] }}</td>
+            <td>{{ user["shares"] }}</td>
+            <td>{{ user["cur_price"] }}</td>
+            <td>{{ user["total"] }}</td>
+        </tr>
+         {% endfor %}
+        <tr class="table-dark cash" >
+             <td colspan="4">Cash</td>
+            <td>{{ cash }}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+            <tr class>
+                <td colspan="4">Total Holdings</td>
+                <td>{{ grand_total }}</td>
+            </tr>
+        </tfoot>
+</table>
+
+{% endblock %}
