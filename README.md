@@ -22,5 +22,8 @@ Lastly on the History tab is simply the history of every transaction for the cur
 
 
 
+To run website with the API create an account with IEX 
+@ iexcloud.io/cloud-login#/register/.
 
-
+then use export "API_KEY=value"
+where value is your API token from IEX
